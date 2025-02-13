@@ -14,4 +14,21 @@ function myreadFile(){
         console.log('File Reading error:',err.messgae);
     }
 }
+const mywriteFile=(data)=>{
+    try{
+        const res = fs.writeFile('dummy.txt',data);
+        res.then(()=>{
+            console.log('Successfully');
+        })
+        .catch((err)=>{
+            throw err;
+        })
+    }
+    catch(err){
+        console.log('file writie error:',err.meesge);
+    }
+}
+
 myreadFile();
+const data  ='fulle stack deve';
+mywriteFile(data);
